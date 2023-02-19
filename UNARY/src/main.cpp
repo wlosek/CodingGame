@@ -30,23 +30,18 @@ int main()
             result += " ";
         }
         const char bit = bitset_message[i];
-        int bit_count{0};
+        result += bit == '0' ? "00 " : "0 ";
         for (int j = i; j < bitset_message.size(); ++j)
         {
             if (bitset_message[j] == bit)
             {
-                bit_count++;
+                result += "0";
                 i = j;
             }
             else
             {
                 break;
             }
-        }
-        result += bit == '0' ? "00 " : "0 ";
-        for (int c = 0; c < bit_count; ++c)
-        {
-            result += "0";
         }
     }
 
